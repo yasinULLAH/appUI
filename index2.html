@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OFFICIAL EMERGENCY ALERT - MUHAMMAD ALI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --govt-red: #B91C1C;
+            --govt-navy: #0F172A;
+            --govt-gold: #EAB308;
+        }
+
+        body {
+            background-color: #111827;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-alert { font-family: 'Archivo Black', sans-serif; }
+        .font-condensed { font-family: 'Barlow Condensed', sans-serif; }
+
+        /* Texture and Patterns */
+        .govt-pattern {
+            background-image: radial-gradient(#ffffff05 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .hazard-strip {
+            background: repeating-linear-gradient(
+                45deg,
+                var(--govt-gold),
+                var(--govt-gold) 20px,
+                #000 20px,
+                #000 40px
+            );
+        }
+
+        /* High-Intensity Animations */
+        @keyframes pulse-red {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(185, 28, 28, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(185, 28, 28, 0); }
+        }
+        .emergency-pulse {
+            animation: pulse-red 2s infinite;
+        }
+
+        @keyframes siren-flash {
+            0%, 100% { fill: var(--govt-red); filter: drop-shadow(0 0 5px var(--govt-red)); }
+            50% { fill: #ef4444; filter: drop-shadow(0 0 20px #ef4444); }
+        }
+        .siren-light { animation: siren-flash 0.8s infinite; }
+
+        /* Beveled Border Effect */
+        .govt-border {
+            border: 12px solid #fff;
+            box-shadow: 
+                inset 0 0 0 2px rgba(0,0,0,0.1),
+                0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        @media (max-width: 640px) {
+            .govt-border { border-width: 6px; }
+            .txt-massive { font-size: 12vw; line-height: 0.9; }
+        }
+    </style>
+</head>
+<body class="min-h-screen govt-pattern flex items-center justify-center p-2 sm:p-6">
+
+    <div class="w-full max-w-5xl govt-border bg-white overflow-hidden relative">
+        
+        <!-- TOP HAZARD STRIP -->
+        <div class="hazard-strip h-4 sm:h-6 w-full"></div>
+
+        <!-- OFFICIAL HEADER -->
+        <header class="bg-red-700 text-white p-4 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 border-b-4 border-black">
+            <div class="flex items-center gap-4">
+                <!-- Advanced Custom Siren Icon -->
+                <div class="bg-black p-3 rounded-xl border-2 border-white/20">
+                    <svg class="w-12 h-12 sm:w-16 sm:h-16" viewBox="0 0 100 100">
+                        <path class="siren-light" d="M20 70 Q20 15 50 15 T80 70" />
+                        <rect x="15" y="70" width="70" height="15" rx="4" fill="#334155" />
+                        <path d="M40 70 L40 30 Q50 20 60 30 L60 70" fill="white" opacity="0.1" />
+                        <!-- Rays -->
+                        <g stroke="#EAB308" stroke-width="6" stroke-linecap="round" opacity="0.8">
+                            <line x1="50" y1="10" x2="50" y2="0" />
+                            <line x1="15" y1="30" x2="2" y2="15" />
+                            <line x1="85" y1="30" x2="98" y2="15" />
+                        </g>
+                    </svg>
+                </div>
+                <div>
+                    <h2 class="font-alert text-2xl sm:text-4xl tracking-tighter leading-none">GOVERNMENT OF PAKISTAN</h2>
+                    <p class="font-condensed text-lg sm:text-xl tracking-[0.3em] text-yellow-400">STATE EMERGENCY BROADCAST</p>
+                </div>
+            </div>
+            <div class="bg-black/20 px-4 py-2 rounded-lg border border-white/10 text-center">
+                <span class="block text-[10px] font-black uppercase opacity-70">Alert Level</span>
+                <span class="text-xl font-alert text-yellow-400">CRITICAL</span>
+            </div>
+        </header>
+
+        <!-- MAIN CONTENT GRID -->
+        <main class="grid grid-cols-1 md:grid-cols-12">
+            
+            <!-- PHOTO SECTION (Authority Style) -->
+            <div class="md:col-span-5 bg-slate-100 p-4 sm:p-8 flex flex-col items-center border-b md:border-b-0 md:border-r-4 border-black">
+                <div class="w-full relative group">
+                    <!-- Photo Frame with ID Plate -->
+                    <div class="bg-white p-3 shadow-2xl border-2 border-slate-300">
+                        <div class="aspect-[4/5] overflow-hidden bg-slate-200 relative">
+                            <img src="person.png" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" alt="SUBJECT PHOTO">
+                            <!-- Tactical Overlay -->
+                            <div class="absolute inset-0 border-[16px] border-black/5 pointer-events-none"></div>
+                        </div>
+                    </div>
+                    <!-- Official Stamp -->
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 opacity-20 pointer-events-none">
+                        <svg viewBox="0 0 100 100" class="fill-red-800 rotate-12">
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="4 2"/>
+                            <text x="50" y="50" text-anchor="middle" font-size="10" font-weight="bold">OFFICIAL RECORD</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- CALL TO ACTION BUTTON (MOBILE PRIMARY) -->
+                <div class="w-full mt-10 space-y-3">
+                    <a href="tel:03331234567" class="emergency-pulse block w-full bg-red-700 hover:bg-red-800 text-white text-center py-5 rounded-none border-b-4 border-red-900 active:translate-y-1 transition-all">
+                        <span class="block text-[10px] font-black uppercase tracking-[0.2em]">Contact Family Immediately</span>
+                        <span class="text-3xl font-alert tracking-widest">0333-1234567</span>
+                    </a>
+                    <div class="flex items-center justify-center gap-2 text-slate-500 font-bold text-[10px] uppercase">
+                        <div class="w-2 h-2 bg-green-500 rounded-full animate-ping"></div>
+                        Line Active 24/7
+                    </div>
+                </div>
+            </div>
+
+            <!-- DATA SECTION -->
+            <div class="md:col-span-7 p-4 sm:p-8 flex flex-col">
+                <div class="mb-8 border-b-8 border-red-700 pb-4">
+                    <h1 class="txt-massive font-alert text-red-700 leading-none mb-2">MISSING</h1>
+                    <h1 class="txt-massive font-alert text-slate-900 leading-none">SUBJECT</h1>
+                    <div class="bg-black text-white px-4 py-2 mt-4 inline-block font-condensed text-2xl sm:text-3xl tracking-[0.4em]">
+                        MUHAMMAD ALI
+                    </div>
+                </div>
+
+                <!-- OFFICIAL DOSSIER GRID -->
+                <div class="grid grid-cols-1 gap-1">
+                    <div class="bg-slate-900 text-white p-4 flex justify-between items-center group">
+                        <span class="font-condensed text-xl tracking-widest opacity-60">FATHER NAME</span>
+                        <span class="font-alert text-xl sm:text-2xl text-yellow-400">ABDUL KARIM</span>
+                    </div>
+                    <div class="bg-slate-800 text-white p-4 flex justify-between items-center">
+                        <span class="font-condensed text-xl tracking-widest opacity-60">AGE / GENDER</span>
+                        <span class="font-alert text-xl sm:text-2xl">16Y / MALE</span>
+                    </div>
+                    <div class="bg-slate-900 text-white p-4 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+                        <span class="font-condensed text-xl tracking-widest opacity-60">LAST SEEN LOCATION</span>
+                        <span class="font-alert text-lg sm:text-xl text-yellow-400 text-right">PESHAWAR, KPK</span>
+                    </div>
+                    <div class="bg-slate-800 text-white p-4 flex justify-between items-center">
+                        <span class="font-condensed text-xl tracking-widest opacity-60">DATE MISSING</span>
+                        <span class="font-alert text-xl sm:text-2xl">02 JUNE 2026</span>
+                    </div>
+                </div>
+
+                <!-- PHYSICAL SPECS -->
+                <div class="mt-8">
+                    <div class="grid grid-cols-3 gap-1 mb-1">
+                        <div class="bg-slate-200 p-3 text-center">
+                            <span class="block text-[10px] font-black text-slate-500">HEIGHT</span>
+                            <span class="font-bold">5.6 FT</span>
+                        </div>
+                        <div class="bg-slate-200 p-3 text-center">
+                            <span class="block text-[10px] font-black text-slate-500">BUILD</span>
+                            <span class="font-bold">SLIM</span>
+                        </div>
+                        <div class="bg-slate-200 p-3 text-center">
+                            <span class="block text-[10px] font-black text-slate-500">COMPLEXION</span>
+                            <span class="font-bold uppercase">Wheatish</span>
+                        </div>
+                    </div>
+                    <div class="bg-yellow-100 border-l-8 border-yellow-500 p-4">
+                        <span class="block text-[10px] font-black text-yellow-700 uppercase mb-1">Last Known Attire</span>
+                        <p class="font-bold text-slate-800 uppercase italic">Blue Shirt, Black Trouser, Black Shoes</p>
+                    </div>
+                </div>
+
+                <!-- SECONDARY CONTACT -->
+                <div class="mt-auto pt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-slate-900 text-white p-4 flex items-center gap-4 border-l-8 border-red-700">
+                        <div class="text-4xl font-alert">15</div>
+                        <div class="leading-tight">
+                            <span class="block text-[10px] font-black text-red-500">POLICE</span>
+                            <span class="font-condensed text-xl tracking-widest">HELPLINE</span>
+                        </div>
+                    </div>
+                    <button class="bg-white border-4 border-black p-4 font-alert text-sm flex items-center justify-center gap-2 hover:bg-black hover:text-white transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"/></svg>
+                        SHARE ALERT
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- FOOTER BAR -->
+        <footer class="bg-black text-white p-4 text-center">
+            <p class="font-condensed text-lg tracking-[0.5em] opacity-80 uppercase">Public Service Broadcast - Bannu Software Solutions</p>
+        </footer>
+
+        <!-- BOTTOM HAZARD STRIP -->
+        <div class="hazard-strip h-4 sm:h-6 w-full"></div>
+    </div>
+
+    <!-- Final Author Footer (Mandatory) -->
+    <div style="display: none;" class="fixed bottom-0 left-0 right-0 bg-white/95 border-t py-1 text-center text-[9px] text-gray-400 z-[100] backdrop-blur-sm">
+        Created by: Yasin Ullah – Bannu Software Solutions | Website: www.yasinbss.com | WhatsApp: 03361593533
+    </div>
+
+</body>
+</html>
