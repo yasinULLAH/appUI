@@ -250,10 +250,16 @@
 
     <!-- Sharing Logic -->
     <script>
+        // Dynamically fix OG image path for crawlers if hosted
+        const ogImage = document.querySelector('meta[property="og:image"]');
+        if (ogImage && !ogImage.content.startsWith('http')) {
+            ogImage.content = window.location.origin + '/' + ogImage.content;
+        }
+
         document.getElementById('share-btn').addEventListener('click', async () => {
             const shareData = {
                 title: 'MISSING PERSON: Muhammad Ali',
-                text: 'Muhammad Ali is missing from Peshawar, KPK since June 02, 2026. Please help us find him. Every share counts.',
+                text: '🚨 OFFICIAL EMERGENCY ALERT: Muhammad Ali is MISSING from Peshawar, KPK. Please help us find him! View the full poster here: ',
                 url: window.location.href
             };
 
