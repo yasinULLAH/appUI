@@ -46,6 +46,6 @@ To use this for a new alert, simply edit the following sections in the HTML file
 ## 📄 License
 This is a sample UI project provided for public service use. Feel free to clone, modify, and deploy for any missing person search effort.
 
-**Created by:** [Yasin Ullah – Bannu Software Solutions](http://www.yasinbss.com)  
+**Created by:** Yasin Ullah 
 **WhatsApp:** 03361593533  
 *Every Share Counts.*
