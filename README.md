@@ -69,4 +69,4 @@ This is a public service UI project. Feel free to clone, modify, and deploy for 
 **Lead Developer:** Yasin Ullah (Bannu Software Solutions)  
 **WhatsApp:** 03361593533  
 
-*Every share counts. Help us bring them home.*
+*Every share counts.*
